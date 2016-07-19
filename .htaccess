@@ -1,0 +1,19 @@
+RewriteCond %{QUERY_STRING} site [OR]
+RewriteCond %{REQUEST_URI} /site
+RewriteRule ^ http://changepond.com/? [L,R=301]
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+#Redirect 301 /site /home
+#RewriteCond %{REQUEST_URI} /site
+#RewriteRule ^ http://changepond.com/? [L,R=301]
+</IfModule>
+
+# END WordPress

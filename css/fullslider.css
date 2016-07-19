@@ -1,0 +1,364 @@
+/* ==========================================================================
+   nuovo slider full width
+   ========================================================================== */
+.royalSlider {
+	width: 100%;
+	z-index: 5;
+	overflow: hidden;
+	height: 600px;
+	min-height: 250px;
+}
+/*Solution banner*/
+#solution .royalSlider { 
+	height: 800px;
+}
+#solution .title {
+	position: absolute;
+	max-width: 1080px;
+	width: 100%;
+	left: calc(50% - 540px);
+	margin-top: 40px;
+}
+.deco {
+	background: rgba(255,255,255,0.8);
+	border-radius: 50%;
+	height: 140px;
+	width: 140px;
+	margin: 0 auto;
+	padding-top: 15px;
+	border: 10px dashed rgba(0,0,0, 0.1) ;
+}
+/* Carousel base class */
+.royalSlider.carousel {
+	height: 100%;
+	margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.royalSlider .carousel-caption {
+	z-index: 10;
+}
+/* Declare heights because of positioning of img element */
+.royalSlider .carousel .item {
+	height: 100%;
+	background-color: #777;
+}
+.royalSlider .carousel-inner > .item > img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	height: 100%;
+}
+.royalSlider .rsContent {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+.royalSlider .rsContent .container {
+	color: #fff;
+	text-align: center;
+	margin-top: 10%;
+	position: relative;
+}
+#solution .rsContent .container {
+	margin-top: 15%;
+}
+.royalSlider .rsContent .container h1 {
+	font-size: 48px;
+	margin-bottom: 20px;
+}
+.royalSlider .rsContent .container h1 small {
+	color: #fff;
+}
+.royalSlider .rsContent .container p {
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+.royalSlider .rsOverflow {
+	width: 100% !important;
+}
+.royalSlider a.rsImg {
+	display: none;
+}
+.royalSlider .rsImg {
+	max-width: none;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+}
+/*Single image only*/
+.royalSlider.single {
+	height: 250px;
+}
+.royalSlider.single .rsContent .container {
+	margin-top: 3%;
+}
+.royalSlider.single .rsNav,
+.royalSlider.single .rsArrowLeft, 
+.royalSlider.single .rsArrowRight {
+	display: none;
+}
+.royalSlider.single:hover .rsArrowLeft, .royalSlider.single:hover .rsArrowRight {
+	display: none!important;
+}
+/* v1.0.5 */
+/* Core RS CSS file. 95% of time you shouldn't change anything here. */
+.royalSlider {
+	position: relative;
+	direction: ltr;
+}
+.royalSlider > * {
+	float: left;
+}
+.rsWebkit3d .rsSlide {
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+}
+.rsWebkit3d .rsSlide, .rsWebkit3d .rsContainer, .rsWebkit3d .rsThumbs, .rsWebkit3d .rsPreloader, .rsWebkit3d img, .rsWebkit3d .rsOverflow, .rsWebkit3d .rsBtnCenterer, .rsWebkit3d .rsAbsoluteEl, .rsWebkit3d .rsABlock, .rsWebkit3d .rsLink {
+	-webkit-backface-visibility: hidden;
+}
+.rsFade.rsWebkit3d .rsSlide, .rsFade.rsWebkit3d img, .rsFade.rsWebkit3d .rsContainer {
+	-webkit-transform: none;
+	transform: none;
+}
+.rsOverflow {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.rsVisibleNearbyWrap {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.rsVisibleNearbyWrap .rsOverflow {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.rsContainer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.rsArrow, .rsThumbsArrow {
+	cursor: pointer;
+}
+.rsThumb {
+	float: left;
+	position: relative;
+}
+.rsArrow, .rsNav, .rsThumbsArrow {
+	opacity: 1;
+	-webkit-transition: opacity 0.3s linear;
+	-moz-transition: opacity 0.3s linear;
+	-o-transition: opacity 0.3s linear;
+	transition: opacity 0.3s linear;
+}
+.rsArrowLeft, .rsArrowRight {
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	background: url(../img/nav-arrow.png) no-repeat 0 0;
+	box-sizing: content-box;
+	bottom: 49%;
+	opacity: 0.6;
+}
+.rsArrowRight {
+	right: 30px;
+	background-position: 0 -24px;
+}
+.rsArrowLeft {
+	left: 30px;
+	background-position: 0 0;
+}
+.rsArrowLeft:hover, .rsArrowRight:hover {
+	opacity: 1;
+}
+.rsArrowLeft, .rsArrowRight {
+	display: none!important;
+}
+.royalSlider:hover .rsArrowLeft, .royalSlider:hover .rsArrowRight {
+	display: block!important;
+}
+/*.rsHidden {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+	-moz-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+	-o-transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+	transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+}*/
+.rsGCaption {
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+/* Fullscreen options, very important ^^ */
+.royalSlider.rsFullscreen {
+	position: fixed !important;
+	height: auto !important;
+	width: auto !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	z-index: 2147483647 !important;
+	top: 0 !important;
+	left: 0 !important;
+	bottom: 0 !important;
+	right: 0 !important;
+}
+.royalSlider .rsSlide.rsFakePreloader {
+	opacity: 1 !important;
+	-webkit-transition: 0s;
+	-moz-transition: 0s;
+	-o-transition: 0s;
+	transition: 0s;
+	display: none;
+}
+.rsSlide {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+.royalSlider.rsAutoHeight, .rsAutoHeight .rsSlide {
+	height: auto;
+}
+.rsContent {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.rsPreloader {
+	position: absolute;
+	z-index: 0;
+}
+.rsNav {
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	user-select: none;
+	bottom: 20px;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	padding-right: 20px;
+}
+.rsNavItem {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0.25);
+	background: #fff;
+	display: inline-block;
+	height: 10px;
+	margin: 0 2px;
+	width: 10px;
+	cursor: pointer;
+	box-shadow: 0 1px 2px #000;
+	border: solid 2px #fff;
+}
+.rsNavItem:hover, .rsNavItem.rsNavSelected {
+	background: #18a1f7;
+	border: solid 2px #18a1f7;
+}
+.rsThumbs {
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	z-index: 22;
+}
+.rsTabs {
+	float: left;
+	background: none !important;
+}
+.rsTabs, .rsThumbs {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.rsVideoContainer {
+	width: auto;
+	height: auto;
+	line-height: 0;
+	position: relative;
+}
+.rsVideoFrameHolder {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #141414;
+	opacity: 0;
+	-webkit-transition: .3s;
+}
+.rsVideoFrameHolder.rsVideoActive {
+	opacity: 1;
+}
+.rsVideoContainer iframe, .rsVideoContainer video, .rsVideoContainer embed, .rsVideoContainer .rsVideoObj {
+	position: absolute;
+	z-index: 50;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+@media screen and (max-width: 1080px) { 
+#solution .title {
+	left: 0;
+}
+}
+@media screen and (max-width: 990px) { 
+	.royalSlider .rsContent .container h1 {
+		font-size: 32px;
+		margin-bottom: 10px;
+		margin-top: 80px;
+	}
+	.royalSlider .rsContent .container p {
+		font-size: 16px;
+	}
+	#solution .rsContent .container {
+		margin-top: 30%;
+		width: 80%;
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+}
+@media (max-width: 767px) {
+.royalSlider {
+	height: 500px;
+}
+.royalSlider .rsContent .container {
+	margin-top: 15%;
+}
+.royalSlider .rsContent .container h1 {
+	margin-top: 0;
+}
+#solution .rsContent .container {
+		margin-top: 40%;
+}
+}
+@media (max-width: 640px) {
+	.royalSlider .rsContent .container h1 {
+		font-size: 28px;
+		margin-top: 55px;
+	}
+	.rsArrowRight {
+		margin-left: 0;
+		right: 5px;
+		left: inherit;
+	}
+	.rsArrowLeft {
+		margin-left: 0;
+	}
+	.rsNav {
+		bottom: 0;
+	}
+}
